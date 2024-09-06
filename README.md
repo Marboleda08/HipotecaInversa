@@ -1,24 +1,25 @@
-# Calculadora de Hipoteca inversa
-
-### How Does It Work?
-1. Home Value: The bank or financial institution evaluates the current value of your home.
-2. Owner’s Age: The older the owner, the more money they can receive.
-3. Loan: Instead of making payments to the bank, the bank pays you. You can receive the money as a lump sum, in monthly payments, or as a line of credit.
-4. No Monthly Payments: You don’t have to make monthly payments to the bank. The loan is repaid when you move out, sell the house, or pass away.
-5. Interest and Costs: Interest and other costs accumulate over time and are added to the loan balance.
-
-# Example
-Imagine you are 70 years old and your house is worth 650,000,000 COP. With a reverse mortgage, you could receive a portion of that value in cash, say 15,046,296.30 COP without having to sell your house or make monthly payments.
-
-# Benefits
-1. Access to Cash: You get cash without selling your house.
-2. Stay in Your Home: You can continue living in your home.
-3. No Monthly Payments: You don’t have to worry about making monthly payments.
-
-# Considerations
-1. Debt Accumulation: The debt increases over time due to interest.
-2. Reduced Inheritance: The value of the inheritance for your heirs may decrease.
-3. I hope this helps! If you have any more questions or need further clarification, feel free to ask.
-
 ### Maria Paula Arboleda
+
+# Calculadora de Hipoteca inversa
+## Como funciona:
+#### La calculadora de hipoteca tiene 5 entradas:
+1. Valor del inmueble: Este debe de ser un valor entre 650.000.000 COP y 800.000.000 COP
+2. Edad del propietario: La edad del propietario debe de ser mayor o igual a 65 años
+3. Estado civil: El estado civil debe de ser soltero o casado
+4. Edad conyugue: si esta entra en el rango de edad estableido tambien recibe parte de la cuota mensual
+5. Tasa de interes: Esta se debe digitar como porcentaje y no debe exceder 34.97%
+### Toma los 5 valores de entrada y me genera una salida:
+1. Cuota mensual
+## Para ejecutar el codigo por fuera de vscode o pycharm:
+### Clone el repositorio a su maquina:
+```markdown
+  clone git https://github.com/Marboleda08/HipotecaInversa MAriaPaula
+```
+#### Para ejecutar el codigo cmd:
+```markdown
+python src\Console\Console.py
+```
+
+
+
 
