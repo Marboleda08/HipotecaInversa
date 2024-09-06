@@ -13,7 +13,7 @@
 ## Para ejecutar el codigo por fuera de vscode o pycharm:
 ### Clone el repositorio a su maquina:
 ```markdown
-  clone git https://github.com/Marboleda08/HipotecaInversa MAriaPaula
+  clone git https://github.com/Marboleda08/HipotecaInversa MariaPaula
 ```
 #### Para ejecutar el codigo cmd:
 ```markdown
