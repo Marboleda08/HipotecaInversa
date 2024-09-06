@@ -31,19 +31,33 @@ class Mortgage:
         life_expectancy_colombia = 73
         monthly_interest_rate = self.interest_rate / 12
         life_expectancy = 1
-        if self.interest_rate > 0:
-            if new_marital_status == "single" and self.owner_age < life_expectancy_colombia:
-                life_expectancy = life_expectancy_colombia - self.owner_age
-            elif new_marital_status == "married" and self.spouse_age < life_expectancy_colombia:
-                life_expectancy = life_expectancy_colombia - self.spouse_age
-            monthly_payment = (self.property_value * monthly_interest_rate) / (life_expectancy * 12)
+        if monthly_interest_rate >= 0:
+            if self.interest_rate > 0:
+                if new_marital_status == "single" and self.owner_age < life_expectancy_colombia:
+                    life_expectancy = life_expectancy_colombia - self.owner_age
+                elif new_marital_status == "married" and self.spouse_age < life_expectancy_colombia:
+                    life_expectancy = life_expectancy_colombia - self.spouse_age
+                monthly_payment = (self.property_value * monthly_interest_rate) / (life_expectancy * 12)
+            else:
+                if life_expectancy_colombia > self.owner_age:
+                    life_expectancy = life_expectancy_colombia - self.owner_age
+                elif life_expectancy_colombia > self.spouse_age:
+                    life_expectancy = life_expectancy - self.spouse_age
+                monthly_payment = self.property_value / (life_expectancy * 12)
+            return monthly_payment
         else:
-            monthly_payment = self.property_value / (life_expectancy * 12)
-        return monthly_payment
+            if self.interest_rate < 0:
+                if new_marital_status == "single" and self.owner_age < life_expectancy_colombia:
+                    life_expectancy = life_expectancy_colombia - self.owner_age
+                elif new_marital_status == "married" and self.spouse_age < life_expectancy_colombia:
+                    life_expectancy = life_expectancy_colombia - self.spouse_age
+                monthly_payment = (self.property_value * monthly_interest_rate) / (life_expectancy * 12)
+                return monthly_payment
+
 
     def verify_rate(self):
-        if self.interest_rate > 34.97:
-            raise QuotaError(f"The interest rate exceeds the limits. The error is: {self.interest_rate}. The maximum interest rate in Colombia is 34.97%")
+        if self.interest_rate > 34.97 or self.interest_rate < 0:
+            raise QuotaError(f"The interest rate exceeds the limits. The error is: {self.interest_rate}. The maximum interest rate in Colombia is 34.97% and the minimum is 0%")
 
     def verify_age(self):
         if self.owner_age < 65 or self.owner_age < 0:
