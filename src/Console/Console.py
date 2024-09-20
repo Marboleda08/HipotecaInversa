@@ -1,8 +1,11 @@
-from src.Logic.Logica import Mortgage
+import sys
+sys.path.append("src")
+
+from Logic.Logica import Mortgage
 
 def main():
     print("Calculadora de Hipoteca Inversa")
-    valor_inmueble = int(input("Ingrese el valor del inmueble entre 650 y 800 millones: "))
+    valor_inmueble = (input("Ingrese el valor del inmueble entre 650'000.000 y 800'000.000: "))
     edad_propietario = int(input("Ingrese la edad del propietario: "))
     estado_civil = input("Ingrese el estado civil del propietario (soltero/casado): ")
     edad_conyugue = int(input("Ingrese la edad del cónyuge (si aplica, de lo contrario ingrese 0): "))
