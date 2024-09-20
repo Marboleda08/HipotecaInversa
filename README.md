@@ -17,7 +17,7 @@
 ```
 #### Para ejecutar el codigo cmd:
 ```markdown
-python Console\Console.py
+python src\Console\Console.py
 ```
 
 
